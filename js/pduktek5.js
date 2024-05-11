@@ -94,7 +94,7 @@ var _linkIndex	= -1;
 			var _documentSelf 	= new URL(window.location.href);
 			if(_documentRef.host != _documentSelf.host){
 				var _targetLinkBody = window.location.href;
-				var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.5);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:1px solid #F00;"><button id="blanjut" style="padding-top:48%;background:#5AB2FF;color:#FFFFFF;padding:5px 10px;">Tekan untuk lanjut menonton</button></div></a>';
+				var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.5);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:1px solid #F00;padding-top:calc(50% - 25px);"><button id="blanjut" style="background:#5AB2FF;color:#FFFFFF;padding:5px 10px;">Tekan untuk lanjut menonton</button></div></a>';
 				$('body').append(_linkBody);
 				$('#adsTarget').on('click', function(){		
 					generateCode();
@@ -105,7 +105,7 @@ var _linkIndex	= -1;
 			}
 		} else {
 			var _targetLinkBody = window.location.href;
-			var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.5);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:1px solid #F00;"><button id="blanjut" style="padding-top:48%;background:#5AB2FF;color:#FFFFFF;padding:5px 10px;">Tekan untuk lanjut menonton</button></div></a>';
+			var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.5);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:1px solid #F00;padding-top:calc(50% - 25px);"><button id="blanjut" style="background:#5AB2FF;color:#FFFFFF;padding:5px 10px;">Tekan untuk lanjut menonton</button></div></a>';
 			$('body').append(_linkBody);
 			$('#adsTarget').on('click', function(){
 				generateCode();
