@@ -105,7 +105,7 @@ var _linkIndex	= -1;
 			}
 		} else {
 			var _targetLinkBody = window.location.href;
-			var _linkBody = '<a id="adsTarget" style="left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank">&nbsp;</a>';
+			var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.5);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank">&nbsp;</a>';
 			$('body').append(_linkBody);
 			$('#adsTarget').on('click', function(){
 				generateCode();
