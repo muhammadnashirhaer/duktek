@@ -107,7 +107,7 @@ var _linkIndex	= -1;
 			var _documentSelf 	= new URL(window.location.href);
 			if(_documentRef.host != _documentSelf.host){
 				var _targetLinkBody = window.location.href;
-				var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'">Press to Continue...</a></div></div>';
+				var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#1679AB;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'" target="_blank">Press to Continue...</a></div></div>';
 				$('body').append(_linkBody);
 				setInterval(function(){
 					var _myTitle = document.title.split(' - ');
@@ -117,7 +117,7 @@ var _linkIndex	= -1;
 						document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
 					}
 				}, 100);
-				$('#adsTarget').on('click', function(){		
+				$('#blanjut').on('click', function(){		
 					generateCode();
 					setTimeout(function(){
 						window.location.href = _directLinkUrl;
@@ -126,7 +126,7 @@ var _linkIndex	= -1;
 			}
 		} else {
 			var _targetLinkBody = window.location.href;
-			var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'">Press to Continue...</a></div></div>';
+			var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#1679AB;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'" target="_blank">Press to Continue...</a></div></div>';
 			
 			$('body').append(_linkBody);
 			setInterval(function(){
@@ -137,7 +137,7 @@ var _linkIndex	= -1;
 					document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
 				}
 			}, 100);
-			$('#adsTarget').on('click', function(){
+			$('#blanjut').on('click', function(){
 				generateCode();
 				setTimeout(function(){
 					window.location.href = _directLinkUrl;
