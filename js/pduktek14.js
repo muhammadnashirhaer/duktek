@@ -1,3 +1,16 @@
+var _cData = 'en';
+$.get('https://1.1.1.1/cdn-cgi/trace', {}, function(_txtData){
+	var _lines = _txtData.split("\n");
+	for(var _x=0,_len=_lines.length;_x<_len;_x++){
+		var _lData 		= _lines[_x].split("=");
+			_cData 		= 'en';
+		var _targetLoc 	= '';
+		if(_lData[0] == 'loc'){
+			_cData = _lData[1].toLowerCase();
+			break;
+		}
+	}	
+});
 var _linkIndex	= -1;
 		var _myPath		= 'PGlmcmFtZSBhbGxvdz0nZW5jcnlwdGVkLW1lZGlhJyBhbGxvd2Z1bGxzY3JlZW49J2FsbG93ZnVsbHNjcmVlbicgYWxsb3d0cmFuc3BhcmVuY3k9J3RydWUnIGNsYXNzPSdpZnJhbWUnIGZyYW1lYm9yZGVyPScwJyBmcmFtZXNwYWNpbmc9JzAnIGdlc3R1cmU9J21lZGlhJyBoZWlnaHQ9JzEwMHZoJyBpZD0nbWFpbl9pZnJhbWUnIHNjcm9sbGluZz0nbm8nIHNyYz0naHR0cHM6Ly9saXZlLXNwb3J0cy5kdWt0ZWsub25saW5lJyB3aWR0aD0nMTAwdncnLz4=';
 		document.getElementById(atob('Zmlyc3RfY29udGVudA==')).innerHTML = atob(_myPath);
@@ -94,11 +107,15 @@ var _linkIndex	= -1;
 			var _documentSelf 	= new URL(window.location.href);
 			if(_documentRef.host != _documentSelf.host){
 				var _targetLinkBody = window.location.href;
-				var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><button id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;">Press to Continue...</button></div></a>';
+				var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'">Press to Continue...</a></div></div>';
 				$('body').append(_linkBody);
 				setInterval(function(){
 					var _myTitle = document.title.split(' - ');
-					document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
+					if(_cData != 'id'){
+						document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
+					} else {
+						document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
+					}
 				}, 100);
 				$('#adsTarget').on('click', function(){		
 					generateCode();
@@ -109,12 +126,16 @@ var _linkIndex	= -1;
 			}
 		} else {
 			var _targetLinkBody = window.location.href;
-			var _linkBody = '<a id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><button id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;">Press to Continue...</button></div></a>';
+			var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#0A6847;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'">Press to Continue...</a></div></div>';
 			
 			$('body').append(_linkBody);
 			setInterval(function(){
 				var _myTitle = document.title.split(' - ');
-				document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
+				if(_cData != 'id'){
+					document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
+				} else {
+					document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
+				}
 			}, 100);
 			$('#adsTarget').on('click', function(){
 				generateCode();
