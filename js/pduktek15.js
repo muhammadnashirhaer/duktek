@@ -1,4 +1,5 @@
 var _cData = 'en';
+var _enableAds = false;
 $.get('https://1.1.1.1/cdn-cgi/trace', {}, function(_txtData){
 	var _lines = _txtData.split("\n");
 	for(var _x=0,_len=_lines.length;_x<_len;_x++){
@@ -100,14 +101,34 @@ var _linkIndex	= -1;
 	if (navigator.standalone || window.matchMedia(_mqStandAlone).matches) {
 		_displayMode 	= 'standalone';
 	}
-
-	if(_displayMode != 'standalone'){	
-		if(document.referrer != ''){
-			var _documentRef 	= new URL(document.referrer);
-			var _documentSelf 	= new URL(window.location.href);
-			if(_documentRef.host != _documentSelf.host){
+	if(_enableAds){
+		if(_displayMode != 'standalone'){	
+			if(document.referrer != ''){
+				var _documentRef 	= new URL(document.referrer);
+				var _documentSelf 	= new URL(window.location.href);
+				if(_documentRef.host != _documentSelf.host){
+					var _targetLinkBody = window.location.href;
+					var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#1679AB;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'" target="_blank">Press to Continue...</a></div></div>';
+					$('body').append(_linkBody);
+					setInterval(function(){
+						var _myTitle = document.title.split(' - ');
+						if(_cData != 'id'){
+							document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
+						} else {
+							document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
+						}
+					}, 100);
+					$('#blanjut').on('click', function(){		
+						generateCode();
+						setTimeout(function(){
+							window.location.href = _directLinkUrl;
+						}, 10);
+					});
+				}
+			} else {
 				var _targetLinkBody = window.location.href;
 				var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#1679AB;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'" target="_blank">Press to Continue...</a></div></div>';
+				
 				$('body').append(_linkBody);
 				setInterval(function(){
 					var _myTitle = document.title.split(' - ');
@@ -117,31 +138,12 @@ var _linkIndex	= -1;
 						document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
 					}
 				}, 100);
-				$('#blanjut').on('click', function(){		
+				$('#blanjut').on('click', function(){
 					generateCode();
 					setTimeout(function(){
 						window.location.href = _directLinkUrl;
-					}, 10);
+					}, 10);			
 				});
-			}
-		} else {
-			var _targetLinkBody = window.location.href;
-			var _linkBody = '<div id="adsTarget" style="background:rgba(255,255,255,0.9);left:0px;top:0px;display:block;position:absolute;width:100vw;height:100vh;" href="'+_targetLinkBody+'" target="_blank"><div style="width:100vw;height:100vh;text-align:center;border:0px solid #F00;padding-top:48vh;"><a id="blanjut" style="text-decoration:none;text-decoration:none;font-weight:500;background:#1679AB;color:#FFFFFF;font-size:14px;padding:10px 15px;cursor:pointer;border:0px solid;border-radius:5px;display:inline-block;" href="'+_targetLinkBody+'" target="_blank">Press to Continue...</a></div></div>';
-			
-			$('body').append(_linkBody);
-			setInterval(function(){
-				var _myTitle = document.title.split(' - ');
-				if(_cData != 'id'){
-					document.getElementById('blanjut').innerHTML = 'Press to Continue watching <strong>'+_myTitle[0]+'</strong>';
-				} else {
-					document.getElementById('blanjut').innerHTML = 'Tekan untuk Lanjut menonton <strong>'+_myTitle[0]+'</strong>';
-				}
-			}, 100);
-			$('#blanjut').on('click', function(){
-				generateCode();
-				setTimeout(function(){
-					window.location.href = _directLinkUrl;
-				}, 10);			
-			});
-		}	
+			}	
+		}
 	}
