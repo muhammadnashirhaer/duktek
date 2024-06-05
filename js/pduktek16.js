@@ -1,5 +1,5 @@
 var _cData = 'en';
-var _enableAds = true;
+var _enableAds = false;
 $.get('https://1.1.1.1/cdn-cgi/trace', {}, function(_txtData){
 	var _lines = _txtData.split("\n");
 	for(var _x=0,_len=_lines.length;_x<_len;_x++){
