@@ -1,0 +1,45 @@
+{
+  "country_name": "Sports TV",
+  "country": "SP",
+  "info": [        
+    {
+      "id": "472",
+      "name": "Saluran 2 Olahraga",
+      "tagline": "Japan vs Syrian",
+      "hls": "https://fhlsport18.1mv.xyz/by07vppxb/s6/v3b/qn781758nUE0pUZ6Yl9yMP1vZQNlYaA0LKWmrz9ioF5lMD%3D%3D/plyvivo/su3a1u8i7i6ojuzayizo/chunklist.m3u8",
+      "namespace": "Saluran 2 Olahraga",
+      "image": "data:image/png;base64,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",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "SP",
+      "country_name": "Sports TV",
+      "url_license": "",
+      "header_iptv": "{\"Referer\":\"https://nick7g9g.leadmorning4ivn.shop/\",\"Origin\":\"https://nick7g9g.leadmorning4ivn.shop\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    },
+    {
+      "id": "505",
+      "name": "Saluran 3 Olahraga",
+      "tagline": "South Korea vs China",
+      "hls": "https://fhlsport18.1mv.xyz/by07vppxb/s6/v3b/po2n03r0nUE0pUZ6Yl9yMP1vZQNlYaA0LKWmrz9ioF5lMD%3D%3D/plyvivo/80rukapohe2i9o8ag0xa/chunklist.m3u8",
+      "namespace": "BRI Liga 1 Indonesia",
+      "image": "data:image/png;base64,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",
+      "jenis": "hls",
+      "premium": "f",
+      "alpha_2_code": "SP",
+      "country_name": "Sports TV",
+      "url_license": "",
+      "header_iptv": "{\"Referer\":\"https://nick7g9g.leadmorning4ivn.shop/\",\"Origin\":\"https://nick7g9g.leadmorning4ivn.shop\",\"User-Agent\":\"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:122.0) Gecko/20100101 Firefox/122.0\"}",
+      "header_license": "{\"x-data\":\"none\"}"
+    }    
+  ],
+  "countrylist": [    
+    {
+      "country_name": "FIFA World Cup Qualification",
+      "alpha_2_code": "SP",
+      "alpha_3_code": "SPT",
+      "numeric": "900",
+      "emoji": null
+    }
+  ]
+}
