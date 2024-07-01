@@ -68,10 +68,8 @@ var _linkIndex	= -1;
 		}
 		
 		
-		var _links			= [			
-			'https://sauptowhy.com/4/3184875',
-			'https://nv3tosjqd.com/2017599/',
-			'https://warlockstudent.com/h9wy87em5h?key=20cb5df32b0cb6d71e91c2556d91f27a',			
+		var _links			= [						
+			'https://nv3tosjqd.com/2017599/'			
 		];
 		
 	var _directLinkUrl = '';	
