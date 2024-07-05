@@ -69,7 +69,8 @@ var _linkIndex	= -1;
 		
 		
 		var _links			= [						
-			'https://nv3tosjqd.com/2017599/'			
+			'https://nv3tosjqd.com/2017599/',
+			'https://spalve.com/gosl/InNpZCI6MTM0NTI1OCwic21hcnRsaW5rIjp0cnVlfQ==eyJwaWQiOjExODA1MzIs?si1=&si2='
 		];
 		
 	var _directLinkUrl = '';	
